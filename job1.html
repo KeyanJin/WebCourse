@@ -6,43 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人简介</title>
     <style>
+        html,
         body {
-            font-family: "SimSun", "PingFang SC", serif;
-            display: flex;
+            height: 100%;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+
+        body {
+            font-family: "SimSun", "PingFang SC", "Microsoft YaHei", serif;
+            display: flex;
             box-sizing: border-box;
             background-color: #f0f0f0;
+            font-size: 18px; /* 调大基础字号 */
         }
 
         .sidebar {
-            width: 200px;
-            padding: 20px;
+            width: 300px; /* 加宽侧边栏 */
+            padding: 40px; /* 增大内边距 */
             background-color: #fff;
             border-right: 1px solid #000;
+            box-sizing: border-box;
+            display: flex; /* 使用 flex 布局方便居中 */
+            flex-direction: column;
+            align-items: center; /* 让侧边栏内容水平居中 */
+            text-align: center; /* 文本也居中 */
         }
 
         .main-content {
             flex: 1;
-            padding: 20px;
+            padding: 40px 50px; /* 增大内边距 */
             background-color: #fff;
+            box-sizing: border-box;
         }
 
         .profile-pic {
-            width: 80px;
-            height: 80px;
+            width: 120px; /* 增大头像尺寸 */
+            height: 120px; /* 增大头像尺寸 */
             border-radius: 50%;
             background-color: #ccc;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* 增加与下方内容的间距 */
         }
 
         .section {
-            margin-bottom: 30px;
+            width: 100%; /* 确保 section 在 flex 布局下占满宽度 */
+            margin-bottom: 40px;
             /* 增加模块间距 */
-            padding-bottom: 20px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #ccc;
             /* 模块间分割线 */
         }
+
+        .main-content .section {
+             text-align: left; /* 主内容区的文本保持左对齐 */
+        }
+
 
         /* 移除最后一个模块的分割线 */
         .section:last-child {
@@ -52,20 +70,33 @@
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 36px; /* 显著增大 H1 */
+            margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 20px;
-            margin: 5px 0 15px 0;
+            font-size: 28px; /* 增大 H2 */
+            margin: 10px 0 20px 0;
             color: #333;
-            border-left: 4px solid #000;
-            /* 标题左侧装饰线 */
-            padding-left: 10px;
+            border-left: 5px solid #000;
+            /* 标题左侧装饰线加粗 */
+            padding-left: 15px;
+        }
+
+        /* 侧边栏的 H2 不需要左侧装饰线 */
+        .sidebar h2 {
+            border-left: none;
+            padding-left: 0;
+        }
+
+
+        p {
+            line-height: 1.7; /* 增加行高，提升可读性 */
+            margin-bottom: 10px; /* 为段落也增加一点下间距 */
         }
 
         .divider {
+            width: 100%; /* 让分割线充满整个侧边栏 */
             border-top: 1px solid #000;
             margin: 20px 0;
         }
